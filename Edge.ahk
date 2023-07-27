@@ -66,7 +66,7 @@ WM_HTML_GETOBJECT(){
 
 IWebBrowserApp_from_IWebDOCUMENT( IWebDOCUMENT ){
     static IID_IWebBrowserApp := "{0002DF05-0000-0000-C000-000000000046}"  ; IID_IWebBrowserApp
-    return ComObj(9,ComObjQuery( IHTMLWindow2_from_IWebDOCUMENT( IWebDOCUMENT ), IID_IWebBrowserApp, IID_IWebBrowserApp),1)
+    return ComObj(9,ComObjQuery( IWebDOCUMENT, IID_IWebBrowserApp, IID_IWebBrowserApp),1)
 }
 
 IHTMLWindow2_from_IWebDOCUMENT( IWebDOCUMENT ){

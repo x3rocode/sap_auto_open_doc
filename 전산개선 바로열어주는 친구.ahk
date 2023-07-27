@@ -1,4 +1,4 @@
-﻿#Include edge.ahk
+﻿#Include Edge1.ahk
 #Singleinstance Force
 CoordMode, Mouse, Window
 
@@ -48,12 +48,13 @@ BtnOk:
 }
 
 BtnOk1:
-IfWinExist ahk_exe msedge.exe  ;if Edge active
 {
-
+   run, msedge.exe  "--devtools-server-port 9222 --new-window"
+   sleep, 8000
 	;#Include C:\Users\someuser\Desktop\scripts\edge.ahk ;change it to your script location
 	if (Edges := Edge.FindInstances()){
-		EdgeInst := {"base": Edge, "DebugPort": Edges.MinIndex()}	; or if you know the port:  EdgeInst := {"base": Edge, "DebugPort": 9222}
+		EdgeInst := {"base": Edge, "DebugPort": 9222}	; or if you know the port:  EdgeInst := {"base": Edge, "DebugPort": 9222}
+      msgbox, 응애2
 	}
 	else {
 		msgbox That didn't work. Please check if Edge is running in debug mode.`n(use, for example, http://localhost:9222/json/version )
